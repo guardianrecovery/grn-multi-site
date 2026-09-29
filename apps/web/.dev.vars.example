@@ -1,0 +1,7 @@
+# Copy to .dev.vars for local development (never commit .dev.vars).
+# Base URL of the Payload CMS (apps/cms dev server).
+PAYLOAD_API_URL=http://localhost:3000
+# Optional: Payload user API key if the CMS content is not publicly readable.
+# PAYLOAD_API_KEY=
+# Optional (dev only): resolve this hostname when the request Host is plain "localhost".
+# DEV_TENANT_HOST=saddlebrook-counseling.localhost

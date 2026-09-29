@@ -1,0 +1,25 @@
+{
+  "name": "grn-multi-site",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Guardian Recovery Network multi-site monorepo (Payload CMS + Astro, on Cloudflare Workers)",
+  "packageManager": "pnpm@11.28.2",
+  "engines": {
+    "node": ">=24.15.0",
+    "pnpm": "^11"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,yml,yaml,astro}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json,md,yml,yaml,astro}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "turbo": "^2.5.0"
+  }
+}
