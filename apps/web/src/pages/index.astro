@@ -1,0 +1,31 @@
+---
+import { env } from 'cloudflare:workers'
+import { siteTitle } from '@grn/ui'
+import SiteHeading from '@grn/ui/SiteHeading.astro'
+import { fetchPagesForTenant } from '../lib/payload'
+
+// Placeholder page: proves Host -> tenant -> scoped content end to end. The real
+// templates come with the pilot site.
+const { tenant } = Astro.locals
+const pages = await fetchPagesForTenant(tenant.slug, {
+  baseUrl: env.PAYLOAD_API_URL,
+  apiKey: env.PAYLOAD_API_KEY,
+})
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{siteTitle(tenant)}</title>
+  </head>
+  <body>
+    <SiteHeading title={tenant.name} />
+    <p>Tenant: {tenant.slug} ({tenant.domain})</p>
+    <ul>
+      {pages.map((page) => <li>{page.title}</li>)}
+    </ul>
+  </body>
+</html>
