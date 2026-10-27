@@ -17,6 +17,10 @@
   },
   // Keep secrets/variables set in the Cloudflare dashboard (PAYLOAD_SECRET) across Git deploys.
   "keep_vars": true,
+  // The admin panel and API must only be reachable on GRN's own domains, not on the public
+  // *.workers.dev URL or per-version preview URLs. Attach a custom domain/route in the dashboard.
+  "workers_dev": false,
+  "preview_urls": false,
   "d1_databases": [
     {
       "binding": "D1",
