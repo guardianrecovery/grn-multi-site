@@ -1,0 +1,4 @@
+{
+  "extends": "@grn/config/tsconfig.base.json",
+  "include": ["src", "eslint.config.mjs"]
+}

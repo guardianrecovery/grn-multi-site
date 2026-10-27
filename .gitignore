@@ -1,0 +1,26 @@
+node_modules
+.turbo
+dist
+.DS_Store
+*.log
+*.tsbuildinfo
+
+# env files (never commit secrets)
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Cloudflare / framework build output
+.wrangler
+.open-next
+.next
+.astro
+next-env.d.ts
+
+# tests
+coverage
+test-results
+playwright-report
